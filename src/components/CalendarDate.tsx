@@ -14,7 +14,7 @@ export const CalendarDate: React.FC<CalendarDateProps> = ({
   const navigate = useNavigate();
   const changeDate = (e: Date): void => {
     setDate(e);
-    navigate("/program");
+    navigate("/movies");
   };
   return (
     <>

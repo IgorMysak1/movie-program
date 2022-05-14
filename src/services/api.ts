@@ -1,9 +1,9 @@
 import axios from "axios";
-import { IProgram } from "../types/program";
-import { convertDataProgram } from "../utilits/convertDataProgram";
-export const getProgramMovies = async (date: string): Promise<IProgram[]> => {
+import { IMovie } from "../types/movies";
+import { convertDataMovie } from "../utilits/convertDataMovie";
+export const getMovies = async (date: string): Promise<IMovie[]> => {
   const response = await axios.get(
     `https://api.tvmaze.com/schedule?country=US&date=${date}`
   );
-  return convertDataProgram(response.data);
+  return convertDataMovie(response.data);
 };
