@@ -6,9 +6,8 @@
   position: relative;
   background: #fff;
   border-bottom: 1px solid #ebebeb;
-  padding: 5px 0px;
+  padding: 10px 0px;
   background-image: url("../../public/img/bg_header.jpg");
-  //   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   img {
@@ -17,5 +16,8 @@
     left: 10px;
     height: 25px;
     width: 25px;
+  }
+  h1 {
+    font-size: 25px;
   }
 }
