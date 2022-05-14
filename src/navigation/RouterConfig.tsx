@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ChooseDate } from "../components/ChooseDate";
-import { Program } from "../components/Program";
+import { Programs } from "../components/Programs";
 
 interface RouterConfigProps {
   date: Date;
@@ -14,7 +14,7 @@ export const RouterConfig: React.FC<RouterConfigProps> = ({
   return (
     <Routes>
       <Route path="/" element={<ChooseDate date={date} setDate={setDate} />} />
-      <Route path="/program" element={<Program date={date} />} />
+      <Route path="/program" element={<Programs date={date} />} />
     </Routes>
   );
 };

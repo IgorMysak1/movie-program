@@ -1,0 +1,81 @@
+.react-calendar__navigation__next2-button,
+.react-calendar__navigation__prev2-button,
+.react-calendar__month-view__weekdays__weekday {
+  display: none;
+}
+
+.react-calendar__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button {
+  outline: none;
+  border: none;
+  width: 15%;
+  position: relative;
+}
+
+.react-calendar__navigation__prev-button::before,
+.react-calendar__navigation__next-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../public/img/arrowSlide.svg") #f1f1f1;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.react-calendar__navigation__next-button {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #cccfd3;
+}
+
+.react-calendar__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.react-calendar__navigation__label {
+  padding: 10px 0px;
+  outline: none;
+  border: none;
+  width: 70%;
+  font-size: 18px;
+  background: #f1f1f1;
+}
+
+.react-calendar__tile {
+  border: 1px solid #d0d4d9;
+  outline: none;
+  padding: 0px;
+  aspect-ratio: 1 / 0.85;
+  background: #fff;
+}
+
+.react-calendar__tile--active {
+  border: 2px solid #e10246;
+}
+/*# sourceMappingURL=calendarDate.css.map */

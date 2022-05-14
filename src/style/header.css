@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  padding: 10px 0px;
+  background-image: url("../../public/img/bg_header.jpg");
+  background-size: contain;
+  background-position: center;
+}
+
+.header img {
+  position: absolute;
+  top: calc(50% - 13px);
+  left: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.header h1 {
+  font-size: 25px;
+}
+/*# sourceMappingURL=header.css.map */
