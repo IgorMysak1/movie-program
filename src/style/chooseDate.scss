@@ -1,0 +1,33 @@
+@import "./mediaQueryConstants.scss";
+.chooseDate {
+  min-height: calc(100% - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    img {
+      width: 50%;
+      @media (min-width: $md4) {
+        width: 40%;
+      }
+    }
+    p {
+      width: 80%;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 20px;
+      @media (min-width: $md4) {
+        font-size: 22px;
+      }
+    }
+  }
+  &__date {
+  }
+}

@@ -19,6 +19,12 @@
     padding: 0;
   }
 }
+html,
+#root,
+._container {
+  height: 100%;
+}
 body {
+  height: 100%;
   background: #fff;
 }
