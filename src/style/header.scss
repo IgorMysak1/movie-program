@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  padding: 5px 0px;
+  background-image: url("../../public/img/bg_header.jpg");
+  //   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  img {
+    position: absolute;
+    top: calc(50% - 13px);
+    left: 10px;
+    height: 25px;
+    width: 25px;
+  }
+}
