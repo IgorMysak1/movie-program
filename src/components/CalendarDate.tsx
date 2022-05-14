@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { SetStateAction, Dispatch } from "react";
 import Calendar from "react-calendar";
-
+import { useNavigate } from "react-router-dom";
 import "../style/calendarDate.scss";
-export const CalendarDate = () => {
-  const [value, onChange] = useState(new Date());
-  console.log(value);
 
-  return <div>{<Calendar onChange={onChange} value={value} />}</div>;
+interface CalendarDateProps {
+  date: Date;
+  setDate: Dispatch<SetStateAction<Date>>;
+}
+export const CalendarDate: React.FC<CalendarDateProps> = ({
+  date,
+  setDate,
+}) => {
+  const navigate = useNavigate();
+  const changeDate = (e: Date): void => {
+    setDate(e);
+    navigate("/program");
+  };
+  return (
+    <>
+      <Calendar onChange={changeDate} value={date} />
+    </>
+  );
 };

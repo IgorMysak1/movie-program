@@ -31,6 +31,9 @@
 .react-calendar__navigation__next-button {
   transform: rotate(180deg);
 }
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #cccfd3;
+}
 .react-calendar__navigation {
   display: flex;
   justify-content: center;
