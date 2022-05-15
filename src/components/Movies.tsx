@@ -20,13 +20,14 @@ export const Movies: React.FC<MoviesProps> = ({ date }) => {
         setListOfMovies(response);
       })();
   }, []);
+  console.log(listOfMovies);
 
   return (
-    <div className="progams">
-      <h1 className="progams__title">
-        {date.toLocaleDateString("en-US", {
+    <div className="movies">
+      <h1 className="movies__title">
+        {date.toLocaleDateString("ua", {
           year: "numeric",
-          month: "narrow",
+          month: "long",
           day: "numeric",
         })}
       </h1>

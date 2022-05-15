@@ -1,22 +1,20 @@
 export interface IMovie {
   id: number;
   name: string;
-  season: string;
+  season: number;
   year: string;
   image: string;
+  episods: number;
 }
 
 export interface IFullMovie extends IMovie {
-  airdate: IMovieAirdate;
   show: IMovieShow;
-}
-
-interface IMovieAirdate {
-  season: string;
+  number: number;
 }
 
 interface IMovieShow {
   image: IMovieShowImage;
+  premiered: string;
 }
 
 interface IMovieShowImage {
