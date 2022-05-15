@@ -7,7 +7,18 @@ interface MoviesProps {
 }
 
 export const Movies: React.FC<MoviesProps> = ({ date }) => {
-  const [listOfMovies, setListOfMovies] = useState<IMovie[]>([]);
+  const [listOfMovies, setListOfMovies] = useState<IMovie[]>(
+    new Array(3).fill(0).map((_, index) => ({
+      id: index,
+      name: "loading...",
+      season: 1,
+      year: String(new Date().getFullYear()),
+      image: "img/loader.gif",
+      episods: 10,
+    }))
+  );
+  console.log(listOfMovies);
+
   const [showAllMovies, setShowAllMovies] = useState<boolean>(false);
   useEffect(() => {
     date &&
