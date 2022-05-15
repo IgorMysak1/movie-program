@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/header.scss";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
 
   return (

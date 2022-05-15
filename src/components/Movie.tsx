@@ -1,6 +1,6 @@
 import React from "react";
+import { IMovie } from "./index";
 import "../style/movie.scss";
-import { IMovie } from "../types/movies";
 
 export const Movie: React.FC<IMovie> = ({
   name,
@@ -18,8 +18,8 @@ export const Movie: React.FC<IMovie> = ({
         <div className="movie__title">{name}</div>
         <div className="movie__yaer">{year}</div>
         <div className="movie__parts">
-          <span className="movie__season">Сезон: {season}</span>
-          <span className="movie__episods">Епізод: {episods}</span>
+          <span className="movie__season">Season: {season}</span>
+          <span className="movie__episods">Episod: {episods}</span>
         </div>
       </div>
     </div>

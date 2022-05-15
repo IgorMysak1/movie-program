@@ -1,10 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { getMovies } from "../services/api";
-import { createStringfDate } from "../utilits/date";
-import { IMovie } from "../types/movies";
-import { Movie } from "./Movie";
+import React, { useState, useEffect } from "react";
+import { IMovie, Movie, getMovies } from "./index";
 import "../style/movies.scss";
 
 interface MoviesProps {
@@ -13,27 +8,42 @@ interface MoviesProps {
 
 export const Movies: React.FC<MoviesProps> = ({ date }) => {
   const [listOfMovies, setListOfMovies] = useState<IMovie[]>([]);
+  const [showAllMovies, setShowAllMovies] = useState<boolean>(false);
   useEffect(() => {
     date &&
       (async () => {
-        const response = await getMovies(createStringfDate(date));
+        const response = await getMovies(date.toISOString().slice(0, 10));
         setListOfMovies(response);
       })();
   }, []);
-  console.log(listOfMovies);
-
+  const numberOfMovies = 3;
   return (
     <div className="movies">
       <h1 className="movies__title">
-        {date.toLocaleDateString("ua", {
+        {date.toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
         })}
       </h1>
-      {listOfMovies.map((movie) => (
+      {(listOfMovies.length > numberOfMovies
+        ? listOfMovies.slice(
+            0,
+            showAllMovies ? listOfMovies.length : numberOfMovies
+          )
+        : listOfMovies
+      ).map((movie) => (
         <Movie key={movie.id} {...movie} />
       ))}
+      {!showAllMovies && listOfMovies.length > numberOfMovies && (
+        <button
+          className="movies__showMore"
+          onClick={() => setShowAllMovies(true)}
+        >
+          {`Show other ${listOfMovies.length - 3}`}
+          <img src="img/arrowSlide.svg" alt="Arrow" />
+        </button>
+      )}
     </div>
   );
 };

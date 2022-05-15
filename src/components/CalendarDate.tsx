@@ -18,7 +18,12 @@ export const CalendarDate: React.FC<CalendarDateProps> = ({
   };
   return (
     <>
-      <Calendar onChange={changeDate} value={date} />
+      <Calendar
+        showFixedNumberOfWeeks
+        onChange={changeDate}
+        locale="en"
+        value={date}
+      />
     </>
   );
 };

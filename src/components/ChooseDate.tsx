@@ -1,5 +1,5 @@
 import React, { useState, Dispatch, SetStateAction } from "react";
-import { CalendarDate } from "./CalendarDate";
+import { CalendarDate } from "./index";
 import "../style/chooseDate.scss";
 
 interface ChooseDateProps {
@@ -11,7 +11,7 @@ export const ChooseDate: React.FC<ChooseDateProps> = ({ date, setDate }) => {
     <div className="chooseDate">
       <div className="chooseDate__content">
         <img src="img/tv.jpg" alt="TV" />
-        <p>Щоб отримати список серіалів, виберіть необхідну дату та місяць</p>
+        <p>To get a list of series, select the desired date and month</p>
       </div>
       <div className="chooseDate__date">
         <CalendarDate date={date} setDate={setDate} />
