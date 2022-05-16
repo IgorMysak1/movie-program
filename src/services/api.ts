@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IMovie } from "../types/movies";
-import { convertDataMovie } from "../utilits/convertDataMovie";
+import { convertDataMovie } from "../utilits/dataMovie";
 export const getMovies = async (date: string): Promise<IMovie[]> => {
   try {
     const response = await axios.get(

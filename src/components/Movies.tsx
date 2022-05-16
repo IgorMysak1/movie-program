@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { IMovie, Movie, getMovies, defaultNumberMovies, Loader } from "./index";
+import {
+  IMovie,
+  Movie,
+  getMovies,
+  defaultNumberMovies,
+  Loader,
+  createDate,
+} from "./index";
 import "../style/movies.scss";
 
 interface MoviesProps {
@@ -13,7 +20,7 @@ export const Movies: React.FC<MoviesProps> = ({ date }) => {
   useEffect(() => {
     date &&
       (async () => {
-        const response = await getMovies(date.toISOString().slice(0, 10));
+        const response = await getMovies(createDate(date));
         setListOfMovies(response);
       })();
   }, []);
