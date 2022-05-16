@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { IMovie, Movie, getMovies } from "./index";
+import {
+  IMovie,
+  Movie,
+  getMovies,
+  moviesPreloader,
+  defaultNumberMovies,
+} from "./index";
 import "../style/movies.scss";
 
 interface MoviesProps {
@@ -7,17 +13,7 @@ interface MoviesProps {
 }
 
 export const Movies: React.FC<MoviesProps> = ({ date }) => {
-  const [listOfMovies, setListOfMovies] = useState<IMovie[]>(
-    new Array(3).fill(0).map((_, index) => ({
-      id: index,
-      name: "loading...",
-      season: 1,
-      year: String(new Date().getFullYear()),
-      image: "img/loader.gif",
-      episods: 10,
-    }))
-  );
-  console.log(listOfMovies);
+  const [listOfMovies, setListOfMovies] = useState<IMovie[]>(moviesPreloader());
 
   const [showAllMovies, setShowAllMovies] = useState<boolean>(false);
   useEffect(() => {
@@ -27,7 +23,7 @@ export const Movies: React.FC<MoviesProps> = ({ date }) => {
         setListOfMovies(response);
       })();
   }, []);
-  const numberOfMovies = 3;
+
   return (
     <div className="movies">
       <h1 className="movies__title">
@@ -37,16 +33,16 @@ export const Movies: React.FC<MoviesProps> = ({ date }) => {
           day: "numeric",
         })}
       </h1>
-      {(listOfMovies.length > numberOfMovies
+      {(listOfMovies.length > defaultNumberMovies
         ? listOfMovies.slice(
             0,
-            showAllMovies ? listOfMovies.length : numberOfMovies
+            showAllMovies ? listOfMovies.length : defaultNumberMovies
           )
         : listOfMovies
       ).map((movie) => (
         <Movie key={movie.id} {...movie} />
       ))}
-      {!showAllMovies && listOfMovies.length > numberOfMovies && (
+      {!showAllMovies && listOfMovies.length > defaultNumberMovies && (
         <button
           className="movies__showMore"
           onClick={() => setShowAllMovies(true)}

@@ -10,7 +10,7 @@ export const ChooseDate: React.FC<ChooseDateProps> = ({ date, setDate }) => {
   return (
     <div className="chooseDate">
       <div className="chooseDate__content">
-        <img src="img/tv.jpg" alt="TV" />
+        <img style={{ height: 120, width: 160 }} src="img/tv.jpg" alt="TV" />
         <p>To get a list of series, select the desired date and month</p>
       </div>
       <div className="chooseDate__date">
